@@ -1,0 +1,178 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: white; /* Always white */
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+  color: #4a90e2; /* Light blue on hover */
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.userMenu {
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Overview Section (Dashboard Cards) */
+.overview {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4a90e2;
+}
+
+/* Table */
+.content h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f8f9fa;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Action Buttons */
+.editBtn {
+  background: #e6f0ff;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #357abd;
+  transition: background 0.2s;
+}
+
+.editBtn:hover {
+  background: #d0e4ff;
+}
+
+.deleteBtn {
+  background: #ffe6e6;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #d9534f;
+  transition: background 0.2s;
+}
+
+.deleteBtn:hover {
+  background: #ffcccc;
+}
+
+
+/* AddEmployee.module.css */
+.addBtn {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32); /* green gradient */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.addBtn:hover {
+  background: linear-gradient(135deg, #43A047, #1B5E20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
