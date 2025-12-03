@@ -62,3 +62,63 @@
   text-decoration: none;
   font-weight: 500;
 }
+
+
+.notificationWrapper {
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.bell {
+  font-size: 22px;
+  color: white;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  background: white;
+  color: black;
+  width: 260px;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 999;
+}
+
+.notificationItem {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.noNotification {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: gray;
+}
+
+.unread {
+  background-color: #e5f1ff; 
+  border-left: 4px solid #007bff;
+}

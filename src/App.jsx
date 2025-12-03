@@ -20,6 +20,8 @@ import Profile from "./Pages/AdminDashboard/Settings/Profile";
 import RoleManagement from "./Pages/AdminDashboard/Settings/RoleManagement";
 import ChangePassword from "./Pages/AdminDashboard/Settings/ChangePassword";
 import AdminLeaves from "./Pages/AdminDashboard/AdminLeaves";
+import AdminAttendance from "./Pages/AdminDashboard/AdminAttendance";
+import NotificationPage from "./Pages/AdminDashboard/NotificationPage";
 
 function App() {
   return (
@@ -43,7 +45,8 @@ function App() {
          <Route path="settings/role" element={<RoleManagement />} />
          <Route path="settings/change-password" element={<ChangePassword />} />
          <Route path="/admin-dashboard/leaves" element={<AdminLeaves />} />
-
+        <Route path="/admin-dashboard/attendence" element={<AdminAttendance />} />
+        <Route path="/admin-dashboard/notification" element={<NotificationPage />} />
          </Route>
          <Route path="employeeUpdateById/:id" element={<EditEmployee />} />
         <Route path="/hr-dashboard" element={<HrDashboard />} />

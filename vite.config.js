@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [react()],
    server: {
     port: 8083
-  }
+  },
+  define: {
+    global: "window", // shim for SockJS
+  },
 })
 
 

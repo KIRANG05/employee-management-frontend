@@ -59,6 +59,13 @@ function Sidebar() {
   📅 Leaves
 </li>
 
+    <li
+  className={isActive("/admin-dashboard/attendence") ? styles.active : ""}
+  onClick={() => navigate("/admin-dashboard/attendence")}
+>
+  📋 Attendence
+</li>
+
 
         {/* ⚙️ SETTINGS MAIN ITEM */}
         <li
@@ -92,6 +99,12 @@ function Sidebar() {
             </li>
           </ul>
         )}
+          <li
+  className={isActive("/admin-dashboard/notification") ? styles.active : ""}
+  onClick={() => navigate("/admin-dashboard/notification")}
+>
+  🔔 Notifications
+</li>
       </ul>
     </div>
   );

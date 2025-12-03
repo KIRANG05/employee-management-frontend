@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 import api from "../../Services/api"; // axios instance
 import styles from "./Login.module.css"; // your CSS module
 import { useAuth } from "../../Context/AuthContext"; 
+import { useNotifications } from "../../Context/NotificationContext";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -17,6 +19,8 @@ function Login() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  const { loadNotifications } = useNotifications(); // 🔹 add this
+
 
   // handle form submit
   const handleSubmit = async (e) => {
@@ -40,6 +44,8 @@ function Login() {
         localStorage.setItem("role", response.data.role);
         localStorage.setItem("refreshToken", response.data.refreshToken);
         localStorage.setItem("userId", response.data.id);
+
+        loadNotifications(0, 10);
 
         Swal.fire({
           icon: "success",
