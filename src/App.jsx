@@ -22,6 +22,19 @@ import ChangePassword from "./Pages/AdminDashboard/Settings/ChangePassword";
 import AdminLeaves from "./Pages/AdminDashboard/AdminLeaves";
 import AdminAttendance from "./Pages/AdminDashboard/AdminAttendance";
 import NotificationPage from "./Pages/AdminDashboard/NotificationPage";
+import HrDashboardHome from "./Pages/HrDashboard/HrDashboardHome";
+import HrReportees from "./Pages/HrDashboard/HrReportees";
+import HrLeaves from "./Pages/HrDashboard/HrLeaves";
+import HrTasks from "./Pages/HrDashboard/HrTasks";
+import HrAttendance from "./Pages/HrDashboard/HrAttendance";
+import HrNotification from "./Pages/HrDashboard/HrNotification";
+import ApplyLeave from "./Pages/HrDashboard/Leave/ApplyLeave";
+import LeaveRequests from "./Pages/HrDashboard/Leave/LeaveRequests";
+import LeaveSummary from "./Pages/HrDashboard/Leave/LeaveSummary";
+import HrChangePassword from "./Pages/HrDashboard/HrChangePassword";
+import HrAddTask from "./Pages/HrDashboard/Task/HrAddTask";
+import HrTaskDetails from "./Pages/HrDashboard/Task/HrTaskDetails";
+import HrUpdateTask from "./Pages/HrDashboard/Task/HrUpdateTask";
 
 function App() {
   return (
@@ -51,7 +64,21 @@ function App() {
          <Route path="employeeUpdateById/:id" element={<EditEmployee />} />
         <Route path="/hr-dashboard" element={<HrDashboard />} />
         <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
-         
+         <Route path="/hr-dashboard" element={<HrDashboard />}>
+          <Route index element={<HrDashboardHome />} />         // dashboard overview
+          <Route path="reportees" element={<HrReportees />} />  // view employees
+          {/* <Route path="leaves" element={<HrLeaves />} />        // approve/reject leave */}
+          <Route path="leaves/apply" element={<ApplyLeave />} /> 
+          <Route path="leaves/requests" element={<LeaveRequests />} /> 
+          <Route path="leaves/summary" element={<LeaveSummary />} /> 
+          <Route path="tasks/add" element={<HrAddTask />} />          // assign task
+          <Route path="tasks/details" element={<HrTaskDetails />} />
+          <Route path="attendance" element={<HrAttendance />} /> // attendance
+          <Route path="settings/change-password" element={<HrChangePassword />} />
+          <Route path="notification" element={<HrNotification />} /> // notifications
+          <Route path="update-task/:id" element={<HrUpdateTask />} />
+        </Route>
+        
       </Routes>
     </Router>
   );

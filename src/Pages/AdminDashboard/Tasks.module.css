@@ -1,15 +1,17 @@
+/* Admin Task Page Container */
 .taskList {
   padding: 20px;
-  background-color: #f9fafb; /* light gray bg */
+  background-color: #f9fafb;
   min-height: 100vh;
 }
 
+/* Header and Filters */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  flex-wrap: wrap; /* optional for small screens */
+  flex-wrap: wrap;
 }
 
 .header h2 {
@@ -18,89 +20,11 @@
   font-weight: 600;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.table thead {
-  background-color: #2563eb; /* professional blue */
-  color: #fff;
-}
-
-.table th, 
-.table td {
-  padding: 12px 15px;
-  text-align: left;
-  font-size: 14px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.table th {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-}
-
-.table tbody tr:hover {
-  background-color: #f1f5f9; /* hover effect */
-  transition: background 0.2s ease-in-out;
-}
-
-.table td {
-  color: #444;
-}
-
-.table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-/* Status Badge Styling */
-.table td:nth-child(6) {
-  font-weight: 600;
-}
-
-.status-pending {
-  color: #d97706;
-  background: #fef3c7;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-.status-inprogress {
-  color: #1d4ed8;
-  background: #dbeafe;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-.status-hold {
-  color: #9333ea;
-  background: #f3e8ff;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-.status-completed {
-  color: #15803d;
-  background: #dcfce7;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
 .filters {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .filters select,
@@ -120,44 +44,148 @@
 }
 
 .filters button:hover {
-  background-color: #16a34a;
+  background-color: #15803d;
 }
 
-.dropdownContainer {
-  position: relative;
-  display: inline-block; /* keeps dropdown in same line if needed */
-  margin-right: 20px;    /* space between dropdowns */
-}
-
-.dropdownLabel {
-  position: absolute;
-  top: -22px;              /* floats label above dropdown */
-  left: 0px;              /* small left padding */
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  background-color: #fff; /* prevent overlap with select border */
-  padding: 0 4px;
-  pointer-events: none;   /* so label doesn't block clicks */
-}
-
+/* Dropdown / DatePicker containers */
+.dropdownContainer,
 .dateContainer {
   position: relative;
-  display: inline-block; /* side by side, same line */
-  margin-right: 20px;    /* spacing between datepickers */
+  display: inline-block;
+  margin-right: 20px;
 }
 
+.dropdownLabel,
 .dateLabel {
   position: absolute;
-  top: -22px;               /* floats above DatePicker */
+  top: -22px;
   left: 0px;
   font-size: 16px;
   font-weight: 600;
   color: #333;
-  background-color: #fff;  /* prevents overlap */
+  background-color: #fff;
   padding: 0 4px;
-  pointer-events: none;    /* label won’t block clicks */
+  pointer-events: none;
 }
+
+/* Status legend / colored badges above table */
+.statusLegend {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.statusLegend span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.statusSquare {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+/* Badge colors */
+.status-pending { background-color: #fef3c7; color: #d97706; }
+.status-inprogress { background-color: #dbeafe; color: #1d4ed8; }
+.status-hold { background-color: #f3e8ff; color: #9333ea; }
+.status-completed { background-color: #dcfce7; color: #15803d; }
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.table th, 
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background 0.2s ease-in-out;
+}
+
+.table td {
+  color: #444;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.statusLegend {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.statusLegend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+/* Row background based on status */
+.PENDING {
+  background-color: #ffb0a6 !important;  /* light red */
+  color: #000;
+}
+
+.IN_PROGRESS {
+  background-color: #8ecbff !important;  /* light blue */
+  color: #000;
+}
+
+.HOLD {
+  background-color: #d2a8ff !important;  /* purple */
+  color: #000;
+}
+
+.COMPLETED {
+  background-color: #7ce48b !important;  /* green */
+  color: #000;
+}
+
+/* Status legend squares */
+.statusSquare {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.statusSquarePending { background-color: #ff4d4d; }
+.statusSquareProgress { background-color: #4d7dff; }
+.statusSquareHold { background-color: #b46dff; }
+.statusSquareCompleted { background-color: #3BB143; }
+
 
 
 
