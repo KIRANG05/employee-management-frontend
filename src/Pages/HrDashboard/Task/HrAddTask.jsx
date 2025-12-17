@@ -5,16 +5,21 @@ import styles from "./HrAddTask.module.css"; // Custom CSS for styling
 
 function HrAddTask() {
   const [employees, setEmployees] = useState([]);
+    const today = new Date();
+const localDate = today.toLocaleDateString("en-CA");
   const [taskData, setTaskData] = useState({
     taskName: "",
     description: "",
     assignedBy: localStorage.getItem("username") || "", // HR name
     assignedTo: "",
     status: "PENDING",
-    assignedDate: new Date().toISOString().slice(0, 10), // YYYY-MM-DD
+    assignedDate: localDate, // YYYY-MM-DD
     dueDate: "",
     priority: "",
   });
+
+
+
 
   // Fetch employee list for dropdown
   useEffect(() => {
@@ -76,7 +81,7 @@ const payload = {
           assignedBy: localStorage.getItem("username") || "",
           assignedTo: "",
           status: "PENDING",
-          assignedDate: new Date().toISOString().slice(0, 10),
+          assignedDate: localDate,
           dueDate: "",
           priority: ""
         });

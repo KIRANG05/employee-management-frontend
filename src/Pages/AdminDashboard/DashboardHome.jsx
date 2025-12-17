@@ -244,7 +244,7 @@ function DashboardHome() {
       });
       setTodayAttendance(res.data.data);
     } catch {
-      Swal.fire({ icon: "error", title: "Punch in failed" });
+      Swal.fire({ icon: "error", title: res.data.message || "Punch in failed" });
     }
   };
 
@@ -259,7 +259,7 @@ function DashboardHome() {
       });
       setTodayAttendance(res.data.data);
     } catch {
-      Swal.fire({ icon: "error", title: "Punch out failed" });
+      Swal.fire({ icon: "error", title: res.data.message ||"Punch out failed" });
     }
   };
 

@@ -1,4 +1,4 @@
-.aboutContainer {
+.contactContainer {
   max-width: 900px;
   margin: 60px auto;
   padding: 20px;
@@ -21,7 +21,7 @@
 
 .cards {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -47,5 +47,5 @@
 .card p {
   color: #374151;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
 }

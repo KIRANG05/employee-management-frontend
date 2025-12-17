@@ -6,6 +6,9 @@ import { useAuth } from "../../Context/AuthContext.jsx";
 import { useNotifications } from "../../Context/NotificationContext.jsx";
 import React, { useEffect, useState } from "react";
 import api from "../../Services/api";
+import { FaChartLine } from "react-icons/fa";
+
+
 
 import { FaBell } from "react-icons/fa";
 
@@ -75,8 +78,9 @@ const handleSingleNotificationClick = async (id) => {
     <nav className={styles.navbar}>
       {/* Left Logo */}
       <div className={styles.logo}>
-        <FaHome className={styles.icon} />
-        <span>EMS</span>
+        {/* <FaHome className={styles.icon} /> */}
+        <FaChartLine className={styles.icon} />
+        <span>WorkPulse</span>
       </div>
 
       {/* Center Links */}
